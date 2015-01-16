@@ -1,0 +1,10 @@
+{
+	"output_path": "/var/www/html/workspace/metaportal/sites/all/modules/custom/twitterwidget/css",
+	"options": {
+		"cache":         false,
+		"debug":         false,
+		"line-comments": false,
+		"line-numbers":  false,
+		"style":         "expanded"
+	}
+}

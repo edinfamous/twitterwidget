@@ -1,0 +1,412 @@
+/* 
+    Document   : Twitter-styles
+    Created on : 2014-04-15 20:49:58
+    Author     : Anibal Fernado Ledesma Castro
+    Description: 
+        
+*/
+/* ================================================================================================= */
+/* ================================= FUENTES ======================================================= */
+/* ================================================================================================= */
+/* Arial */
+@font-face {
+  font-family: 'arial_narrow_regular';
+  src: url("../../../fonts/Arial/Arial-Narrow/arial_narrow-webfont.eot");
+  src: url("../../../fonts/Arial/Arial-Narrow/arial_narrow-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/Arial/Arial-Narrow/arial_narrow-webfont.woff") format("woff"), url("../../../fonts/Arial/Arial-Narrow/arial_narrow-webfont.ttf") format("truetype"), url("../../../fonts/Arial/Arial-Narrow/arial_narrow-webfont.svg#arial_narrowregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'arial_narrow_bold';
+  src: url("../../../fonts/Arial/Arial-Narrow-Bold/arial_narrow_bold-webfont.eot");
+  src: url("../../../fonts/Arial/Arial-Narrow-Bold/arial_narrow_bold-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/Arial/Arial-Narrow-Bold/arial_narrow_bold-webfont.woff") format("woff"), url("../../../fonts/Arial/Arial-Narrow-Bold/arial_narrow_bold-webfont.ttf") format("truetype"), url("../../../fonts/Arial/Arial-Narrow-Bold/arial_narrow_bold-webfont.svg#arial_narrowbold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'arial_narrow_italic';
+  src: url("../../../fonts/Arial/Arial-Narrow-Italic/arial_narrow_italic-webfont.eot");
+  src: url("../../../fonts/Arial/Arial-Narrow-Italic/arial_narrow_italic-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/Arial/Arial-Narrow-Italic/arial_narrow_italic-webfont.woff") format("woff"), url("../../../fonts/Arial/Arial-Narrow-Italic/arial_narrow_italic-webfont.ttf") format("truetype"), url("../../../fonts/Arial/Arial-Narrow-Italic/arial_narrow_italic-webfont.svg#arial_narrowitalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'arial_narrow_bold_italic';
+  src: url("../../../fonts/Arial/Arial-Narrow-Bold-Italic/arial_narrow_bold_italic-webfont.eot");
+  src: url("../../../fonts/Arial/Arial-Narrow-Bold-Italic/arial_narrow_bold_italic-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/Arial/Arial-Narrow-Bold-Italic/arial_narrow_bold_italic-webfont.woff") format("woff"), url("../../../fonts/Arial/Arial-Narrow-Bold-Italic/arial_narrow_bold_italic-webfont.ttf") format("truetype"), url("../../../fonts/Arial/Arial-Narrow-Bold-Italic/arial_narrow_bold_italic-webfont.svg#arial_narrowbold_italic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Fuentes Helveticas */
+@font-face {
+  font-family: 'helveticaltstd-boldcond', Helvetica, Arial, sans-serif;
+  src: url("../../../fonts/helvetica/helveticaltstd-boldCond.otf");
+}
+@font-face {
+  font-family: 'helveticaltstd-cond', Helvetica, Arial, sans-serif;
+  src: url("../../../fonts/helvetica/helveticaltstd-cond.otf");
+}
+@font-face {
+  font-family: 'helveticaltstd-boldobl';
+  src: url("../../../fonts/helvetica-obl/helveticaltstdboldobl.eot");
+  src: url("../../../fonts/helvetica-obl/helveticaltstdboldobl.eot?#iefix") format("embedded-opentype"), url("../../../fonts/helvetica-obl/helveticaltstdboldobl.woff") format("woff"), url("../../../fonts/helvetica-obl/helveticaltstdboldobl.ttf") format("truetype"), url("../../../fonts/helvetica-obl/helveticaltstdboldobl.svg#helveticaltstd-boldobl") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'helveticaltstd-boldcondobl';
+  src: url("../../../fonts/helvetica-obl/helveticaltstdboldcondobl.eot");
+  src: url("../../../fonts/helvetica-obl/helveticaltstdboldcondobl.eot?#iefix") format("embedded-opentype"), url("../../../fonts/helvetica-obl/helveticaltstdboldcondobl.woff") format("woff"), url("../../../fonts/helvetica-obl/helveticaltstdboldcondobl.ttf") format("truetype"), url("../../../fonts/helvetica-obl/helveticaltstdboldcondobl.svg#helveticaltstd-boldcondobl") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'helveticaltstd-condobl';
+  src: url("../../../fonts/helvetica-obl/helveticaltstdboldobl.eot");
+  src: url("../../../fonts/helvetica-obl/helveticaltstdboldobl.eot?#iefix") format("embedded-opentype"), url("../../../fonts/helvetica-obl/helveticaltstdboldobl.woff") format("woff"), url("../../../fonts/helvetica-obl/helveticaltstdboldobl.ttf") format("truetype"), url("../../../fonts/helvetica-obl/helveticaltstdboldobl.svg#helveticaltstd-condobl") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Fuentes DIN */
+@font-face {
+  font-family: 'din_light';
+  src: url("../../../fonts/DNI-light/din_light-webfont.eot");
+  src: url("../../../fonts/DNI-light/din_light-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/DNI-light/din_light-webfont.woff") format("woff"), url("../../../fonts/DNI-light/din_light-webfont.ttf") format("truetype"), url("../../../fonts/DNI-light/din_light-webfont.svg#din_light") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'din-lightitalic';
+  src: url("../../../fonts/DIN-LightItalic/din-lightitalic-webfont.eot");
+  src: url("../../../fonts/DIN-LightItalic/din-lightitalic-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/DIN-LightItalic/din-lightitalic-webfont.woff") format("woff"), url("../../../fonts/DIN-LightItalic/din-lightitalic-webfont.ttf") format("truetype"), url("../../../fonts/DIN-LightItalic/din-lightitalic-webfont.svg#din-lightitalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'din_alternate_mediumregular';
+  src: url("../../../fonts/DIN-alternateMedium/din_alternate_medium-webfont.otf");
+  src: url("../../../fonts/DIN-alternateMedium/din_alternate_medium-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/DIN-alternateMedium/din_alternate_medium-webfont.eot"), url("../../../fonts/DIN-alternateMedium/din_alternate_medium-webfont.woff") format("woff"), url("../../../fonts/DIN-alternateMedium/din_alternate_medium-webfont.ttf") format("truetype"), url("../../../fonts/DIN-alternateMedium/din_alternate_medium-webfont.svg#din_alternate_mediumregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'black_alternate';
+  src: url("../../../fonts/DIN-BlackAlternate/din-blackalternate-webfont.eot");
+  src: url("../../../fonts/DIN-BlackAlternate/din-blackalternate-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/DIN-BlackAlternate/din-blackalternate-webfont.woff") format("woff"), url("../../../fonts/DIN-BlackAlternate/din-blackalternate-webfont.ttf") format("truetype"), url("../../../fonts/DIN-BlackAlternate/din-blackalternate-webfont.svg#black_alternate") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'din-bolditalicregular';
+  src: url("../../../fonts/DIN-bolditalic/din-bolditalic-webfont.eot");
+  src: url("../../../fonts/DIN-bolditalic/din-bolditalic-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/DIN-bolditalic/din-bolditalic-webfont.woff") format("woff"), url("../../../fonts/DIN-bolditalic/din-bolditalic-webfont.ttf") format("truetype"), url("../../../fonts/DIN-bolditalic/din-bolditalic-webfont.svg#din-bolditalicregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'din-lightitalicaltregular';
+  src: url("../../../fonts/DIN-LightItalicAlt/din-lightitalicalt-webfont.eot");
+  src: url("../../../fonts/DIN-LightItalicAlt/din-lightitalicalt-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/DIN-LightItalicAlt/din-lightitalicalt-webfont.woff") format("woff"), url("../../../fonts/DIN-LightItalicAlt/din-lightitalicalt-webfont.ttf") format("truetype"), url("../../../fonts/DIN-LightItalicAlt/din-lightitalicalt-webfont.svg#din-lightitalicaltregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'din-Bold-regular';
+  src: url("../../../fonts/DIN-bold/din-bold-webfont.eot");
+  src: url("../../../fonts/DIN-bold/in-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/DIN-bold/din-bold-webfont.woff") format("woff"), url("../../../fonts/DIN-bold/din-bold-webfont.ttf") format("truetype"), url("../../../fonts/DIN-bold/din-bold-webfont.svg#dinregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'din_mediumregular';
+  src: url("../../../fonts/DIN-medium/din_medium-webfont.eot");
+  src: url("../../../fonts/DIN-medium/din_medium-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/DIN-medium/din_medium-webfont.woff") format("woff"), url("../../../fonts/DIN-medium/din_medium-webfont.ttf") format("truetype"), url("../../../fonts/DIN-medium/din_medium-webfont.svg#din_mediumregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'din-mediumitalicregular';
+  src: url("../../../fonts/DIN-mediumitalic/din-mediumitalic-webfont.eot");
+  src: url("../../../fonts/DIN-mediumitalic/din-mediumitalic-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/DIN-mediumitalic/din-mediumitalic-webfont.woff") format("woff"), url("../../../fonts/DIN-mediumitalic/din-mediumitalic-webfont.ttf") format("truetype"), url("../../../fonts/DIN-mediumitalic/din-mediumitalic-webfont.svg#din-mediumitalicregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'din-blackitalicregular';
+  src: url("../../../fonts/Din-BlackItaclic/dinblackitalic-webfont.eot");
+  src: url("../../../fonts/Din-BlackItaclic/dinblackitalic-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/Din-BlackItaclic/dinblackitalic-webfont.woff") format("woff"), url("../../../fonts/Din-BlackItaclic/dinblackitalic-webfont.ttf") format("truetype"), url("../../../fonts/Din-BlackItaclic/dinblackitalic-webfont.svg#din-blackitalicregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'dincond-boldregular';
+  src: url("../../../fonts/DIN-Cond-Bold/dincond-bold-webfont.eot");
+  src: url("../../../fonts/DIN-Cond-Bold/dincond-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/DIN-Cond-Bold/dincond-bold-webfont.woff") format("woff"), url("../../../fonts/DIN-Cond-Bold/dincond-bold-webfont.ttf") format("truetype"), url("../../../fonts/DIN-Cond-Bold/dincond-bold-webfont.svg#dincond-boldregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'din_alternate_lightregular';
+  src: url("../../../fonts/DIN-LightAlternate/din-lightalternate-webfont.eot");
+  src: url("../../../fonts/DIN-LightAlternate/din-lightalternate-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/DIN-LightAlternate/din-lightalternate-webfont.woff") format("woff"), url("../../../fonts/DIN-LightAlternate/din-lightalternate-webfont.ttf") format("truetype"), url("../../../fonts/DIN-LightAlternate/din-lightalternate-webfont.svg#din_alternate_lightregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'din-blackregular';
+  src: url("../../../fonts/DIN-Black/din-black-webfont.eot");
+  src: url("../../../fonts/DIN-Black/din-black-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/DIN-Black/din-black-webfont.woff") format("woff"), url("../../../fonts/DIN-Black/din-black-webfont.ttf") format("truetype"), url("../../../fonts/DIN-Black/din-black-webfont.svg#din-blackregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'dincond-mediumalternateRg';
+  src: url("../../../fonts/DIN-Cond-Alternate/dincond-alternate-medium-webfont.eot");
+  src: url("../../../fonts/DIN-Cond-Alternate/dincond-alternate-medium-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/DIN-Cond-Alternate/dincond-alternate-medium-webfont.woff") format("woff"), url("../../../fonts/DIN-Cond-Alternate/dincond-alternate-medium-webfont.ttf") format("truetype"), url("../../../fonts/DIN-Cond-Alternate/dincond-alternate-medium-webfont.svg#dincond-mediumalternateRg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'dincond-mediumregular';
+  src: url("../../../fonts/DIN-CondMedium/dincond-medium-webfont.eot");
+  src: url("../../../fonts/DIN-CondMedium/dincond-medium-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/DIN-CondMedium/dincond-medium-webfont.woff") format("woff"), url("../../../fonts/DIN-CondMedium/dincond-medium-webfont.ttf") format("truetype"), url("../../../fonts/DIN-CondMedium/dincond-medium-webfont.svg#dincond-mediumregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'din-mediumitalicAltregular';
+  src: url("../../../fonts/DIN-mediumitalicalt/din-mediumitalicalt-webfont.eot");
+  src: url("../../../fonts/DIN-mediumitalicalt/din-mediumitalicalt-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/DIN-mediumitalicalt/din-mediumitalicalt-webfont.woff") format("woff"), url("../../../fonts/DIN-mediumitalicalt/din-mediumitalicalt-webfont.ttf") format("truetype"), url("../../../fonts/DIN-mediumitalicalt/din-mediumitalicalt-webfont.svg#din-mediumitalicaltregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'din-bolditalicaltregular';
+  src: url("../../../fonts/DIN-BoldItalicAlt/din-bolditalicalt-webfont.eot");
+  src: url("../../../fonts/DIN-BoldItalicAlt/din-bolditalicalt-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/DIN-BoldItalicAlt/din-bolditalicalt-webfont.woff") format("woff"), url("../../../fonts/DIN-BoldItalicAlt/din-bolditalicalt-webfont.ttf") format("truetype"), url("../../../fonts/DIN-BoldItalicAlt/din-bolditalicalt-webfont.svg#din-bolditalicaltregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'din_Alternate';
+  src: url("../../../fonts/Din_Alternate/din_alternate-webfont.otf");
+  src: url("../../../fonts/Din_Alternate/din_alternate-webfont.eot"), url("../../../fonts/Din_Alternate/din_alternate-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/Din_Alternate/din_alternate-webfont.woff") format("woff"), url("../../../fonts/Din_Alternate/din_alternate-webfont.ttf") format("truetype"), url("../../../fonts/Din_Alternate/din_alternate-webfont.svg#din_alternateregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Din_Cond_regular_Alternate';
+  src: url("../../../fonts/Din_Cond_Regular_Alternate/DINCond-RegularAlternate.otf");
+  src: url("../../../fonts/Din_Cond_Regular_Alternate/DINCond-RegularAlternate.eot"), url("../../../fonts/Din_Cond_Regular_Alternate/DINCond-RegularAlternate.eot?#iefix") format("embedded-opentype"), url("../../../fonts/Din_Cond_Regular_Alternate/DINCond-RegularAlternate.woff") format("woff"), url("../../../fonts/Din_Cond_Regular_Alternate/DINCond-RegularAlternate.ttf") format("truetype"), url("../../../fonts/Din_Cond_Regular_Alternate/DINCond-RegularAlternate.svg#dincond-regularalternateRg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* LUCIDA */
+@font-face {
+  font-family: 'lucida_grandebold';
+  src: url("../../../fonts/Lucida-Grande-Bold/lucida-grande-bold-webfont.eot");
+  src: url("../../../fonts/Lucida-Grande-Bold/lucida-grande-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/Lucida-Grande-Bold/lucida-grande-bold-webfont.woff") format("woff"), url("../../../fonts/Lucida-Grande-Bold/lucida-grande-bold-webfont.ttf") format("truetype"), url("../../../fonts/Lucida-Grande-Bold/lucida-grande-bold-webfont.svg#lucida_grandebold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* ENGSCHRIFT */
+@font-face {
+  font-family: 'Engschrift-alternate';
+  src: url("../../../fonts/DIN-Engschrift-alternate/DINEngschrift-Alternate.otf");
+  src: url("../../../fonts/DIN-Engschrift-alternate/dinengschrift-alternate-webfont.eot?#iefix") format("embedded-opentype"), url("../../../fonts/DIN-Engschrift-alternate/dinengschrift-alternate-webfont.woff") format("woff"), url("../../../fonts/DIN-Engschrift-alternate/dinengschrift-alternate-webfont.ttf") format("truetype"), url("../../../fonts/DIN-Engschrift-alternate/dinengschrift-alternate-webfont.svg#dinschriftregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* ================ TWITTER LINE ============================= */
+#twitter {
+  background: url(../images/twitter/back-twitter.jpg);
+}
+
+.twitter-line-block {
+  text-align: center;
+  height: 230px;
+  margin-left: 4px;
+  background: url(../images/twitter/back-twitter.jpg) #8ec0d9;
+}
+
+.twitterwidget-line {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 23px 0 0;
+}
+.twitterwidget-line .logo {
+  width: 49px;
+  height: 37px;
+  left: -13px;
+  position: relative;
+  display: inline-block;
+  background: url("../images/twitter/icon-twitter.png") no-repeat;
+}
+.twitterwidget-line .logo a {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  height: 100%;
+  text-indent: -9999px;
+}
+.twitterwidget-line .comillas-1 {
+  position: relative;
+  display: inline-block;
+  top: 43px;
+  background: url("../images/twitter/comillas_izq.png");
+  float: left;
+  height: 50px;
+  width: 66px;
+}
+.twitterwidget-line .comillas-2 {
+  position: relative;
+  display: inline-block;
+  background: url("../images/twitter/comillas_der.png");
+  height: 40px;
+  width: 50px;
+  float: right;
+  top: -93px;
+}
+.twitterwidget-line .bx-wrapper {
+  margin: 15px auto 10px;
+}
+.twitterwidget-line .bx-wrapper .bx-viewport {
+  left: 7px;
+  box-shadow: none;
+  border: none;
+  background: none;
+}
+.twitterwidget-line .bx-wrapper .bx-viewport .twitter-line .item-twitter {
+  font-family: "din_mediumregular";
+  color: #fff;
+  font-size: 25px;
+  height: 100px;
+  font-weight: normal;
+  line-height: 1.1em;
+}
+.twitterwidget-line .bx-wrapper .bx-viewport .twitter-line .item-twitter a {
+  font-family: "din-mediumitalicAltregular";
+  color: #cee194;
+  font-size: 27px;
+}
+.twitterwidget-line .bx-wrapper .bx-controls {
+  display: none;
+}
+.twitterwidget-line .link-twitter {
+  display: inline-block;
+  position: relative;
+  float: left;
+}
+.twitterwidget-line .link-twitter a {
+  color: #ffffff;
+}
+.twitterwidget-line .link-twitter a .arroba {
+  font-family: "arial_narrow_bold";
+  font-size: 1.75em;
+}
+.twitterwidget-line .link-twitter a .name-twitter {
+  font-family: "din_mediumregular";
+  font-size: 24px;
+}
+.twitterwidget-line .twitter-footer {
+  display: inline-block;
+  width: 77%;
+  left: 230px;
+  position: relative;
+  top: 5px;
+}
+.twitterwidget-line .twitter-footer .bx-wrapper {
+  float: right;
+  margin: 0px;
+  display: inline-block;
+  width: 280px;
+}
+.twitterwidget-line .twitter-footer .bx-wrapper ul li {
+  font-family: "din_mediumregular";
+  color: #ffffff;
+  font-size: 20px;
+}
+
+/* ================ TWITTER_MENTIONS ============================= */
+.comunidad-mde-block {
+  position: relative;
+  display: inline-block;
+  padding: 45px 19px 50px;
+  background: #f2f2f2;
+  width: 100%;
+}
+.comunidad-mde-block h2 {
+  color: #00A996;
+  font-family: "din-lightitalic";
+  font-size: 45px;
+  margin-bottom: 39px;
+}
+.comunidad-mde-block ul .item-tweet {
+  padding: 10px 10px;
+  width: 33.3%;
+  float: left;
+}
+.comunidad-mde-block ul .item-tweet .content-iten {
+  height: 135px;
+  position: relative;
+  background: white;
+  -webkit-box-shadow: 0 0 8px -1px #afafaf;
+  -moz-box-shadow: 0 0 8px -1px #afafaf;
+  -o-box-shadow: 0 0 8px -1px #afafaf;
+  box-shadow: 0 0 8px -1px #afafaf;
+}
+.comunidad-mde-block ul .item-tweet .content-iten .icon-comillas-der {
+  float: left;
+  position: absolute;
+  margin: 18px 0 0 8px;
+}
+.comunidad-mde-block ul .item-tweet .content-iten .icon-comillas-izq {
+  float: right;
+  position: absolute;
+  top: 36%;
+  right: 15px;
+}
+.comunidad-mde-block ul .item-tweet .content-iten.item-3, .comunidad-mde-block ul .item-tweet .content-iten.item-6 {
+  margin-right: 0;
+}
+.comunidad-mde-block ul .item-tweet .content-iten.item-1, .comunidad-mde-block ul .item-tweet .content-iten.item-2, .comunidad-mde-block ul .item-tweet .content-iten.item-3 {
+  margin-bottom: 20px;
+}
+.comunidad-mde-block ul .item-tweet .content-iten span {
+  font-family: "din_mediumregular";
+}
+.comunidad-mde-block ul .item-tweet .content-iten .arroba {
+  font-family: "arial_narrow_bold";
+}
+.comunidad-mde-block ul .item-tweet .content-iten .tweet-content {
+  color: #656565;
+  padding: 14px 36px 20px;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  line-height: 1.3em;
+}
+.comunidad-mde-block ul .item-tweet .content-iten .tweet-content a {
+  font-family: "din-mediumitalicregular";
+  color: #6293aa;
+}
+.comunidad-mde-block ul .item-tweet .content-iten .link-user {
+  position: absolute;
+  width: 100%;
+  display: block;
+  bottom: 0;
+  padding: 2px 6px;
+  text-align: center;
+  background: #8ec0d9;
+}
+.comunidad-mde-block ul .item-tweet .content-iten .link-user a {
+  color: #ffffff;
+}
+.comunidad-mde-block ul .item-tweet .content-iten .hour-twitt {
+  font-family: "din-mediumitalicregular";
+  position: absolute;
+  right: 5px;
+  bottom: 2px;
+  color: #ffffff;
+  font-size: 0.85em;
+}

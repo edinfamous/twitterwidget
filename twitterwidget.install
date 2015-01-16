@@ -1,0 +1,68 @@
+<?php
+/**
+ * Implementation of hook_enable().
+ */
+function twitterwidget_enable() {
+}
+/**
+ * Implementation of hook_schema().
+ *
+ */
+function twitterwidget_schema() {
+	$schema = array();
+	$schema['twitter_widget'] = array(
+			'description' => t('This table data is stored twitter'),
+			'fields' => array(
+					'twid' => array(
+							'type' => 'int',
+							'size' => 'normal',
+							'not null' => TRUE,
+							'auto increment' => TRUE,
+					),
+					'api_key' => array(
+							'type' => 'varchar',
+                			'length' => '255',
+                			'not null' => TRUE,
+                			'description' => 'The api key string associated with this configuration',
+					),
+					'api_secret' => array(
+							'type' => 'varchar',
+                			'length' => '255',
+                			'not null' => TRUE,
+                			'description' => 'The api secret string associated with this configuration',
+					),
+					'owener' => array(
+							'type' => 'varchar',
+                			'length' => '255',
+                			'not null' => TRUE,
+                			'description' => 'The owener associated with this configuration',
+					),
+					'owner_id' => array(
+							'type' => 'varchar',
+                			'length' => '255',
+                			'not null' => TRUE,
+                			'description' => 'The owener id associated with this configuration',
+					),
+					'token' => array(
+							'type' => 'varchar',
+                			'length' => '255',
+                			'not null' => TRUE,
+                			'description' => 'The token associated with this configuration',
+					),
+					'token_secret' => array(
+							'type' => 'varchar',
+                			'length' => '255',
+                			'not null' => TRUE,
+                			'description' => 'The token secret associated with this configuration',
+					),
+			),
+	);
+	return $schema;
+}
+
+function twitterwidget_install() {
+	drupal_install_schema('twitter_widget');
+}
+function twitterwidget_uninstall() {
+	drupal_uninstall_schema('twitter_widget');
+}

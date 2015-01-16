@@ -1,0 +1,15 @@
+name = Twitter
+
+description = "Module for blocks twitter custom"
+package = Micrositios
+core = 7.x
+files[] = twitterwidget.install
+files[] = twitterwidget.module
+
+stylesheets[all][] = css/twitter-styles.css
+
+dependencies[] = views
+dependencies[] = libraries
+
+; Information added by Drupal.org packaging script on 2014-03-05
+project = "twitterwidget"

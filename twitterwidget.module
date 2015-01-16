@@ -1,0 +1,305 @@
+<?php
+/**
+* Implements hook_block_info().
+*/
+function twitterwidget_block_info() {
+	//Module Declaration
+	$blocks['twitter_line'] = array(
+			'info' => t('TWITTER LINE'),
+			'cache' => DRUPAL_NO_CACHE,
+	);
+	$blocks['twitter_mentions'] = array(
+			'info' => t('TWITTER MENTIONS'),
+			'cache' => DRUPAL_NO_CACHE,
+	);
+	return $blocks;
+}
+
+
+/**
+ * Implements hook_block_view(). 
+ */ 
+
+function twitterwidget_block_view($delta = '') {  
+ $block = array(); 
+ switch ($delta) { 
+	 case 'twitter_line': 
+		 $block['title']   = '<none>';
+		 $api_key 	 	   = default_values_form('api_key');
+		 $api_secret  	   = default_values_form('api_secret');
+		 $owener		   = default_values_form('owener');
+		 $token		       = default_values_form('token');
+		 $token_secret	   = default_values_form('token_secret');
+		 $getTweets		   = getTweets($api_key, $api_secret, $token, $token_secret, $owener);	
+		 
+		 // Load the bxslider library
+		 drupal_add_js(libraries_get_path('bxslider') . '/jquery.bxslider.min.js');
+		 drupal_add_js(libraries_get_path('bxslider') . '/jquery.bxslider.js');
+		 drupal_add_css(libraries_get_path('bxslider'). '/jquery.bxslider.css', array('group' => CSS_DEFAULT, 'every_page' => TRUE));
+		 
+		 // Load your custom script to call the jQuery plugin
+		 drupal_add_js(drupal_get_path('module', 'twitterwidget') . '/js/twitterwidget.js');
+		 
+		 $rawData		   = getArrayTweets($getTweets);
+		 
+		 $block['content'] = array(
+            '#theme' => 'twitter_line',
+            '#items' => array($rawData),
+         );
+		 
+ 	 break;
+ 	 case 'twitter_mentions':
+ 	 	$block['title']	   ='<none>';
+ 	 	$api_key 	 	   = default_values_form('api_key');
+ 	 	$api_secret  	   = default_values_form('api_secret');
+ 	 	$owener		   	   = default_values_form('owener');
+ 	 	$token		       = default_values_form('token');
+ 	 	$token_secret	   = default_values_form('token_secret');
+ 	 	$getMentions	   = getMentions($api_key, $api_secret, $token, $token_secret, $owener);
+ 	 	$rawData		   = getArrayTweets($getMentions);
+ 	 	$block['content'] = array(
+ 	 			'#theme' => 'twitter_mentions',
+ 	 			'#items' => array($rawData)
+ 	 	);
+ 	 break;	 
+ } 
+ return $block; 
+}
+
+
+/**
+ *  Implements hook_block_menu().
+ */
+function twitterwidget_menu() {
+	$items['admin/config/twitterwidget'] = array(
+			'title' => t('twitter widget configuration'),
+			'page callback' => 'drupal_get_form',
+			'page arguments' => array('form_settings_twitterw'),
+			'access arguments' => array('twitter widget configuration'),
+			'type' => MENU_NORMAL_ITEM,
+			'file' => 'twitterwidget.page.inc',
+	);
+	return $items;
+}
+
+function twitterwidget_permission() {
+    return array( 
+        'twitter widget configuration' => array(
+            'title' => t('twitter widget configuration'),
+            'description' => t('twitter widget configuration')
+            ), 
+        );
+}
+
+/**
+ * Implementation of hook_theme().
+ */
+
+function twitterwidget_theme(){
+	return array(
+			'twitter_line'   => array(
+					'template'   => 'theme/twitter_line',
+					'variables'  => array(
+							'items'=> array(),
+					)
+			),
+			'twitter_mentions'   => array(
+					'template'   => 'theme/twitter_mentions',
+					'variables'  => array(
+							'items'=> array(),
+					)
+			),
+	);
+
+}
+
+/**
+ * Add libraries as a dependency
+ */
+include_once libraries_get_path('TwitterAPIExchange') . '/TwitterAPIExchange.php';
+
+
+/**
+ * Function custom for Edwin Hernández Cabrera
+ * 
+ */
+
+/**
+ * return key twitter
+ * @param type $gid
+ * @return type
+ */
+function _key_twiter_($ttid) {
+	$query = db_select("twitter_widget", "tw");
+	$query->fields("tw", array('api_key'));
+	$query->condition("tw.twid", $ttid);
+	$result = $query->execute();
+	$key_twitter_res = 0;
+	while($row = $result->fetchObject()) {
+		
+		$key_twitter_res = $row->api_key;
+		
+	}
+	return $key_twitter_res;
+}
+/*
+ * Function for values in tables
+* defautl in form
+*/
+function default_values_form($column){
+	$query = db_select("twitter_widget", "tw");
+	$query ->fields("tw", array($column));
+	$query -> range (0, 1)
+		   ->orderBy('twid', 'DESC');//ORDER BY created
+
+	$result = $query->execute();
+
+	$key_twitter_res = 0;
+
+	while($row = $result->fetchObject()) {
+		$key_twitter_res = $row->$column;
+	}
+	return $key_twitter_res;
+}
+
+/*
+ * function for get Tweets OAuth
+ */
+function getTweets($api_key, $api_secret, $token, $token_secret, $owener){
+	$url_request = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
+	$settings 	 = array(
+				'oauth_access_token' 		=> $token,
+				'oauth_access_token_secret' => $token_secret,
+				'consumer_key' 				=> $api_key,
+				'consumer_secret' 			=> $api_secret
+				);
+	$getfield 	  = '?screen_name='.$owener.'&count=10';
+	$requestMethod= 'GET';
+	$twitter 	  = new TwitterAPIExchange($settings);
+	$json 		  = $twitter ->setGetfield($getfield)
+					 		 ->buildOauth($url_request, $requestMethod)
+					 		 ->performRequest();
+	
+	return $json;
+} 
+
+/*
+ * Function for get Array Tweets
+ */
+function getArrayTweets($jsonraw){
+	$json = objectToArrayTW(json_decode($jsonraw));
+	for($i=0; $i < count($json); $i++){
+		$user 				  		= $json[$i];
+		if(!empty ($json[$i]['entities']['urls'][0]['url'])){
+		$url						= $json[$i]['entities']['urls'][0]['url'];
+		}else {
+			$url = '';
+		}
+		if(!empty($json[$i]['entities']['media'][0]['url'])){
+			$urlMedia				= $json[$i]['entities']['media'][0]['url'];
+		}else {
+			$urlMedia='';
+		}
+		$fecha 				  		= $user['created_at'];
+		$screen_name		  		= $user['user']['screen_name'];
+		$tweet 				 		= $user['text'];
+		$twitt						= urlsTW($url,$tweet);
+		$twittFinal					= urlsTW($urlMedia, $twitt);
+		$name 				  		= "<a href='https://twitter.com/".$screen_name."' target=_blank><span class='arroba'>@</span> <span class='name-twitter'>".$screen_name."</span></a>";
+		$hour						= diferenceHour($fecha);
+		
+		$rawdata[$i]["hour"] 		=$hour;
+		$rawdata[$i]["screen_name"]	=$name;
+		$rawdata[$i]["tweet"]		=$twittFinal;
+		$rawdata[$i]["urls"]		=$url;
+	}
+	return $rawdata;
+}
+
+/*
+ * function for get mentions OAuth
+ */
+function getMentions($api_key, $api_secret, $token, $token_secret, $owener){
+	$url_request = 'https://api.twitter.com/1.1/statuses/mentions_timeline.json';
+	$settings 	 = array(
+			'oauth_access_token' 		=> $token,
+			'oauth_access_token_secret' => $token_secret,
+			'consumer_key' 				=> $api_key,
+			'consumer_secret' 			=> $api_secret
+	);
+	$getfield 	  = '?screen_name='.$owener.'&count=6';
+	$requestMethod= 'GET';
+	$twitter 	  = new TwitterAPIExchange($settings);
+	$json 		  = $twitter ->setGetfield($getfield)
+							 ->buildOauth($url_request, $requestMethod)
+							 ->performRequest();
+	return $json;
+}
+// Future-friendly json_encode
+if( !function_exists('json_encode') ) {
+    function json_encode($data) {
+        $json = new Services_JSON();
+        return( $json->encode($data) );
+    }
+}
+
+// Future-friendly json_decode
+if( !function_exists('json_decode') ) {
+    function json_decode($data) {
+        $json = new Services_JSON();
+        return( $json->decode($data) );
+    }
+}
+
+//Function convert object to array
+function objectToArrayTW($d) {
+	if (is_object($d)) {
+		// Gets the properties of the given object
+		// with get_object_vars function
+		$d = get_object_vars($d);
+	}
+
+	if (is_array($d)) {
+		/*
+			* Return array converted to object
+		* Using __FUNCTION__ (Magic constant)
+		* for recursive call
+		*/
+		return array_map(__FUNCTION__, $d);
+	}
+	else {
+		// Return array
+		return $d;
+	}
+}
+function urlsTW($url, $twett){
+	
+		
+		$text = str_replace($url,'<a href="'.$url.'" target=_blank>'.$url.'</a>',$twett);
+		
+		return $text;	
+}
+function diferenceHour($timeTW){
+	
+	date_default_timezone_set('Etc/Greenwich');
+	//Times to convert
+	$dateSystem = date_create(date('D M j G:i:s O Y',time()));
+	$timeF = strtotime($timeTW);
+	$interval	= date_diff(date_create($timeTW),$dateSystem);
+	if($interval->d > 0){
+		return date('d/m/y', $timeF);
+	}elseif ($interval->d == 0 && $interval->h == 0 && $interval->i == 0 && $interval->s == 1) {
+		return '... Hace ' . $interval->s . ' Segundo';
+	}elseif ($interval->d == 0 && $interval->h == 0 && $interval->i == 0 && $interval->s != 0) {
+		return '... Hace ' . $interval->s . ' Segundos';
+	}elseif ($interval->h == 0 && $interval->i == 1) {
+		return '... Hace ' . $interval->i . ' Minuto';
+	}elseif ($interval->h == 0 && $interval->i !=1) {
+		return '... Hace ' . $interval->i . ' Minutos';	
+	}elseif ($interval->h < 24 && $interval->h !=1) {
+		return '... Hace ' . $interval->h . ' Horas';
+	}elseif ($interval->h < 24 && $interval->h ==1) {
+		return '... Hace ' .$interval->h . ' Hora';
+	}
+
+}
